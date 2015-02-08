@@ -16,7 +16,6 @@
      
     <body>
      
-    <div id="box">
     <h1>Title</h1>
     <h2>&ensp;&ensp;This is a description + non-</br>visual data from JSON</h2>
 
@@ -32,7 +31,6 @@
     <h2>&ensp;&ensp;This is a description</h2>
     &ensp;
      
-    </div>
     </body>
     </html>
 

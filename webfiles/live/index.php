@@ -14,19 +14,17 @@
 <script>
 $("#inputBox").keyup(function(event){
     if(event.keyCode == 13){
-        $("#id_of_button").click();
+        $("#inputBox").click();
     }
 });
 </script>
 
 </head>
 <body>
-<script language="JavaScript" type="text/javascript" src="https://raw.githubusercontent.com/Scott-Herbert/CookieWarning/master/js/cookiewarning2.js"></script> 
-<div id="box">
-<p>What do you want to know?</p>
+<p>What do you want to know about?</p>
 <form action="page2.php" methord="get">
-	<input type="text" id="inputBox" name="inputBox"/>
+	<input type="text" placeholder="Item to look up..." id="inputBox" name="inputBox"/>
 </form>
-</div>
+
 </body>
 </html>
