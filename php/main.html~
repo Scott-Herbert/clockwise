@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta  http-equiv="Content-Type" content="text/html; charset="utf-8">
+ 
+<meta name="description" content="a collection of databases"/>
+<meta name="keywords" content=""/>
+<meta name="author" content="Clockwise"/>
+<meta name="robots" content="index, follow"/>
+<title>clockwise</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+ 
+<script>
+$("#inputBox").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#id_of_button").click();
+    }
+});
+</script>
+
+
+<body>
+ 
+<div id="box">
+<p>What do you want to know?</p>
+<form action="page2.html">
+	<input type="text" id="inputBox" />
+</form>
+</div>
+</body>
+</html>
