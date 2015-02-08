@@ -6,6 +6,11 @@ body
         width:100%;
         height:auto;
 }
+
+#clear {
+	clear : both;
+}
+
 #box
 {
         width:60%;
@@ -37,7 +42,15 @@ body
 	float:right;
 }
 
-a:link {
+#map {
+	margin-top	 : -150px;
+	float 		 : right;
+	background-color : white;
+	min-height	 : 200px;
+	min-width	 : 300px;
+}
+
+a:link, a:visited {
 	color:#fff;
 	text-decoration : none;
 }
