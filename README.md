@@ -48,3 +48,9 @@ CREATE TABLE `meta_link` (
 ### PHP settings needed
 
 1. The file /webfiles/live/inc/settings.php will need amending.
+
+### Data
+
+1. 20150204CareDataFields.xlsx - Meta data about the fields used
+2. 20150204CareDataCategories.xlsx - Meta data about the fields used
+3. 20150302CareData.xlsx - the raw data  __Only this file is currently user__

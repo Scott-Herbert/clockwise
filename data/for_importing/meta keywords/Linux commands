@@ -1,0 +1,9 @@
+
+# copy and paste the meta list to a text file (called "raw meta keywords" in this example
+
+tr -s '[[:punct:][:space:]]' '\n' < "raw meta keywords" > "single_words"
+tr '[:upper:]' '[:lower:]' < "single_words" > "single_words_lower"
+sort single_words_lower | uniq -u > word.lst
+
+# word.lst then contains the list of meta keywords that can be imported in to the database
+

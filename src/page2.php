@@ -46,6 +46,8 @@ if (IsTorExitPoint()) {
 
 ?>
  
+<a href="index.php">&lt;-Search again</a>
+
 <?PHP
 try {
     $dbh = new PDO('mysql:host=localhost;dbname=meta', $DB_USER, $DB_PASS);

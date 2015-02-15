@@ -60,7 +60,8 @@ if (IsTorExitPoint()) {
 }
 
 ?>
-     
+<a href="index.php">&lt;-Search again</a>    
+ 
     <h1><?php echo $title; ?></h1>
     <h2>&ensp;&ensp;<?php echo $Desc; ?></br><?php echo $JSON; ?></h2>
 
