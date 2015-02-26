@@ -1,14 +1,13 @@
 <?PHP
 
-include_once('inc\settings.php');
+require_once("inc/settings.php");
 
 $clean_Meta = strtolower(preg_replace("/[^a-z]+/i", "-",  $_GET['inputBox']));
 
-$SQL = "SELECT i.Title, i.Description, i.id
-		FROM item AS i
-		 JOIN meta_link as ml on ml.item_id = i.id
-		 JOIN meta as m on m.meta_id = ml.item_id
-		WHERE m.meta_desc = '".$clean_Meta."'";
+$SQL = "SELECT i.Title, i.Description, i.id from meta_link as ml
+	JOIN meta as m on ml.meta_id = ml.meta_id
+	join item as i on ml.item_id = i.id
+ where m.meta_desc = '".$clean_Meta."'";
 
 
 ?>
@@ -39,18 +38,16 @@ function ReverseIPOctets($inputip){
 }
 
 if (IsTorExitPoint()) {
-	echo '<body OnLoad='$.spro.jpopit("You're searches maybe being monitored, please use <a href=\'https://www.torproject.org/\'>tor</a> or <a href=\'https://tails.boum.org/\'>Tails</a> to prevent it.", false, "left");';
+	echo '<body OnLoad=\'$.spro.jpopit("You\'re searches maybe being monitored, please use <a href=\'https://www.torproject.org/\'>tor</a> or <a href=\'https://tails.boum.org/\'>Tails</a> to prevent it.", false, "left");';
 } else {
 	echo '<body>';
 }
 
 ?>
  
-<a href="index.php">&lt;-Search again</a>
-
 <?PHP
 try {
-    $dbh = new PDO('mysql:host=localhost;dbname=meta', $DB_USER, $DB_PASS);
+    $dbh = new PDO('mysql:host=localhost;dbname=meta', $DB_USER, $DB_PASSWORD);
     foreach($dbh->query($SQL) as $row) {
             echo '<h1><a href="page3.php?id='.$row['id'].'">'.$row['Title'].'</a></h1>';
     	    echo '<h2>&ensp;&ensp;'.$row['Description'].'</h2>';

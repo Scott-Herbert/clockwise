@@ -1,6 +1,6 @@
 <?php
 
-include_once('inc\settings.php');
+require_once("inc/settings.php");
 
 $clean_Meta = (int)$_GET['id'];
 
@@ -12,7 +12,7 @@ $ID = "";
 $JSON = "";
 
 try {
-    $dbh = new PDO('mysql:host=localhost;dbname=meta', $DB_USER, $DB_PASS);
+    $dbh = new PDO('mysql:host=localhost;dbname=meta', $DB_USER, $DB_PASSWORD);
     foreach($dbh->query($SQL) as $row) {
 	$Title = $row['Title'];
 	$Desc = $row['Description'];
@@ -40,6 +40,7 @@ try {
      
     </head>
      
+
 <?PHP
 function IsTorExitPoint(){
 	if (gethostbyname(ReverseIPOctets($_SERVER['REMOTE_ADDR']).".".$_SERVER['SERVER_PORT'].".".ReverseIPOctets($_SERVER['SERVER_ADDR']).".ip-port.exitlist.torproject.org")=="127.0.0.2") {
@@ -54,14 +55,13 @@ function ReverseIPOctets($inputip){
 }
 
 if (IsTorExitPoint()) {
-	echo '<body OnLoad='$.spro.jpopit("You're searches maybe being monitored, please use <a href=\'https://www.torproject.org/\'>tor</a> or <a href=\'https://tails.boum.org/\'>Tails</a> to prevent it.", false, "left");';
+	echo '<body OnLoad=\'$.spro.jpopit("You\'re searches maybe being monitored, please use <a href=\'https://www.torproject.org/\'>tor</a> or <a href=\'https://tails.boum.org/\'>Tails</a> to prevent it.", false, "left");';
 } else {
 	echo '<body>';
 }
 
 ?>
-<a href="index.php">&lt;-Search again</a>    
- 
+     
     <h1><?php echo $title; ?></h1>
     <h2>&ensp;&ensp;<?php echo $Desc; ?></br><?php echo $JSON; ?></h2>
 
@@ -84,7 +84,7 @@ $SQL = "SELECT meta_desc from meta_link as ml join meta as m on ml.meta_id = m.m
 
 // List them here (with a link to page 2)
 try {
-    $dbh = new PDO('mysql:host=localhost;dbname=meta', $DB_USER, $DB_PASS);
+    $dbh = new PDO('mysql:host=localhost;dbname=meta', $DB_USER, $DB_PASSWORD);
     foreach($dbh->query($SQL) as $row) {
 	echo "<h3><a href='page2.php?inputBox=".$row['meta_desc']."'>".$row['meta_desc']."</a></h3>";
     }

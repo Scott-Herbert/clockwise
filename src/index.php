@@ -34,7 +34,7 @@ function ReverseIPOctets($inputip){
 }
 
 if (IsTorExitPoint()) {
-	echo '<body OnLoad='$.spro.jpopit("You're searches maybe being monitored, please use <a href=\'https://www.torproject.org/\'>tor</a> or <a href=\'https://tails.boum.org/\'>Tails</a> to prevent it.", false, "left");';
+	echo '<body OnLoad=\'$.spro.jpopit("You\'re searches maybe being monitored, please use <a href=\'https://www.torproject.org/\'>tor</a> or <a href=\'https://tails.boum.org/\'>Tails</a> to prevent it.", false, "left");';
 } else {
 	echo '<body>';
 }

@@ -1,9 +1,8 @@
 <?php
 
-$DB_HOST = 		'';
-$DB_DB = 		'';
-$DB_USER = 		'';
-$DB_PASSWORD = 		'';
-
+$DB_HOST = 		'localhost';
+$DB_DB = 		'meta';
+$DB_USER = 		'root';
+$DB_PASSWORD = 		'PaladinSoft';
 
 ?>
