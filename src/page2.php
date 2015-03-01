@@ -23,7 +23,7 @@ $SQL = "SELECT i.Title, i.Description, i.id from meta_link as ml
 <title>clockwise search for <?php echo $clean_Meta; ?></title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="jpopit.jquery.js"></script>
-</head>
+
 <?PHP
 function IsTorExitPoint(){
 	if (gethostbyname(ReverseIPOctets($_SERVER['REMOTE_ADDR']).".".$_SERVER['SERVER_PORT'].".".ReverseIPOctets($_SERVER['SERVER_ADDR']).".ip-port.exitlist.torproject.org")=="127.0.0.2") {
@@ -37,11 +37,20 @@ function ReverseIPOctets($inputip){
 	return $ipoc[3].".".$ipoc[2].".".$ipoc[1].".".$ipoc[0];
 }
 
-if (IsTorExitPoint()) {
-	echo '<body OnLoad=\'$.spro.jpopit("You\'re searches maybe being monitored, please use <a href=\'https://www.torproject.org/\'>tor</a> or <a href=\'https://tails.boum.org/\'>Tails</a> to prevent it.", false, "left");';
+if ( IsTorExitPoint() ) {
+        ?>
+        </head>
+        <body>
+        <?php
+
 } else {
-	echo '<body>';
-}
+        ?>
+        </head>
+        <body>
+        <div style="Background-color:red;color:white;text-align:center;"><h1>You're searches maybe being monitored, please use <a href='https://wwwtorproject.org/'>tor</a> or <a href='https://tails.boum.org/'>tails</a> to protect yourself$
+        <?php
+} 
+
 
 ?>
  
